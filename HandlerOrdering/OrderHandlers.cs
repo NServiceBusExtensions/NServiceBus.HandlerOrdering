@@ -35,6 +35,11 @@ namespace HandlerOrdering
                 var interfaces = type.GetInterfaces();
                 foreach (var face in interfaces)
                 {
+
+                    if (!face.IsGenericType)
+                    {
+                        continue;
+                    }
                     if (face.GetGenericTypeDefinition() != typeof(IWantToRunAfter<>))
                     {
                         continue;
