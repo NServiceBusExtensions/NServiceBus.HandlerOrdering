@@ -69,8 +69,8 @@ public class TypeSorterTests
 'Class1' wants to run after 'Class3'.
 'Class3' wants to run after 'Class2'.
 'Class2' wants to run after 'Class1'.
-";
-            Assert.AreEqual(expected, exception.Message);
+".Replace("\r\n","").Replace("\n","");
+            Assert.AreEqual(expected, exception.Message.Replace("\r\n", "").Replace("\n", ""));
         }
 
         class Class1
