@@ -15,7 +15,7 @@
     <tags>NSericeBus, HandlerOrdering</tags>
 	  <dependencies>
 		  <group targetFramework=".NETFramework4.0">
-			  <dependency id="NServiceBus" version="3.3.5" />
+			  <dependency id="NServiceBus" version="4.0.0-unstable2459" />
 		  </group>
 	  </dependencies>
   </metadata>
