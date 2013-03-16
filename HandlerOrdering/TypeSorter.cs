@@ -32,7 +32,8 @@ namespace HandlerOrdering
                 if (!sorted.Contains(item))
                 {
                     stack.Reverse();
-					var stringBuilder = new StringBuilder("Cyclic dependency detected.");
+					var stringBuilder = new StringBuilder();
+                    stringBuilder.AppendLine("Cyclic dependency detected.");
                     for (var index = 0; index < stack.Count-1; index++)
                     {
                         var type = stack[index];
