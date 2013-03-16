@@ -32,7 +32,7 @@ namespace HandlerOrdering
                 if (!sorted.Contains(item))
                 {
                     stack.Reverse();
-                    var stringBuilder = new StringBuilder();
+					var stringBuilder = new StringBuilder("Cyclic dependency detected.");
                     for (var index = 0; index < stack.Count-1; index++)
                     {
                         var type = stack[index];
@@ -40,7 +40,7 @@ namespace HandlerOrdering
                         stringBuilder.AppendLine(string.Format("'{0}' wants to run after '{1}'.", type.Name, dependantType.Name));
                     }
 
-                    throw new Exception("Cyclic dependency detected.\r\n" +stringBuilder );
+                    throw new Exception(stringBuilder.ToString() );
                 }
                 return;
             }
