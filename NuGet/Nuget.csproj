@@ -15,7 +15,9 @@
     <ConfigurationName>Deployable</ConfigurationName>
   </PropertyGroup>
   <Target Name="Clean">
-    <RemoveDir Directories="$(SolutionDir)NuGetBuild" />
+	<ItemGroup>
+		<FilesToDelete Include="$(SolutionDir)NuGetBuild\**"/>
+	</ItemGroup>
   </Target>
   <Target Name="Build" DependsOnTargets="NuGetBuild" />
   <Target Name="ReBuild" DependsOnTargets="NuGetBuild" />
