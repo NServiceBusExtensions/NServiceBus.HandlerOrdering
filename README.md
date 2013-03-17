@@ -18,10 +18,9 @@ The current approach to ordering handlers is using [ISpecifyMessageHandlerOrderi
 
 ## Alternative approach
 
-However I find this sometimes results in hard to read code, especially when the number of handlers increases. Also sometime I don't care about the actual order all the handler are run. I mostly care that a
-given handler is executed after some other handler(s).
+This sometimes results in hard to read code, especially when the number of handlers increases. Also sometimes the full expression of order is not important. Rather it is important that a given handler is executed after some other handler(s).
 
-So I came up with this a `IWantToRunAfter<THandler>` syntax. It allows me to express handler dependencies
+So this project supports an interface syntax that allows specifying order by adding an a `IWantToRunAfter<THandler>` to  handler(s). For example.
 
     public class HandlerA : IWantToRunAfter<HandlerC>
     {
