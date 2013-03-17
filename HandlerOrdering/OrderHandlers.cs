@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using NServiceBus;
-
 namespace HandlerOrdering
 {
     class OrderHandlers : ISpecifyMessageHandlerOrdering
@@ -19,8 +18,7 @@ namespace HandlerOrdering
 
         public static Dictionary<Type, List<Type>> GetHandlerDependencies()
         {
-	        var enumerable = (IEnumerable<Type>) typeof (Configure).GetProperty("TypesToScan").GetValue(null);
-			return GetHandlerDependencies(enumerable);
+            return GetHandlerDependencies(ConfigureReader.TypesToScan);
         }
 
         public static Dictionary<Type, List<Type>> GetHandlerDependencies(params Type[] types)

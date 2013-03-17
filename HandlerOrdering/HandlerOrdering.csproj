@@ -78,6 +78,8 @@
     <None Include="FodyWeavers.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigureReader.cs" />
+    <Compile Include="ModuleInitializer.cs" />
     <Compile Include="Sample.cs" />
     <Compile Include="TypeSorterTests.cs" />
     <Compile Include="IWantToRunAfter.cs" />
