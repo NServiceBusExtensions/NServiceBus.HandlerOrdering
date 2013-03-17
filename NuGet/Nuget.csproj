@@ -15,9 +15,9 @@
     <ConfigurationName>Deployable</ConfigurationName>
   </PropertyGroup>
   <Target Name="Clean">
-	<ItemGroup>
-		<FilesToDelete Include="$(SolutionDir)NuGetBuild\**"/>
-	</ItemGroup>
+    <ItemGroup>
+      <FilesToDelete Include="$(SolutionDir)NuGetBuild\**" />
+    </ItemGroup>
   </Target>
   <Target Name="Build" DependsOnTargets="NuGetBuild" />
   <Target Name="ReBuild" DependsOnTargets="NuGetBuild" />
@@ -37,6 +37,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="HandlerOrdering.nuspec" />
+    <None Include="HandlerOrdering.nuspec">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
 </Project>
