@@ -18,7 +18,8 @@ namespace HandlerOrdering
 
         public static Dictionary<Type, List<Type>> GetHandlerDependencies()
         {
-            return GetHandlerDependencies(ConfigureReader.TypesToScan);
+            var enumerable = (IEnumerable<Type>) typeof (Configure).GetProperty("TypesToScan").GetValue(null);
+            return GetHandlerDependencies(enumerable);
         }
 
         public static Dictionary<Type, List<Type>> GetHandlerDependencies(params Type[] types)
