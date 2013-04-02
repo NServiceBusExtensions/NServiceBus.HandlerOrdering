@@ -46,3 +46,11 @@ Here is the nuget package http://nuget.org/packages/HandlerOrdering/
 
 
 
+## Icon
+
+Icon courtesy of [The Noun Project](http://thenounproject.com)
+
+
+
+ 
+
