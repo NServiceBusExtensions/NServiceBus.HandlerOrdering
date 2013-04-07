@@ -85,4 +85,28 @@ public class TypeSorterTests
         }
 
     }
+
+    [TestFixture]
+    public class Ensure_self_dependencies_are_handled
+    {
+        [Test]
+        public void Run()
+        {
+            var dependencies = new Dictionary<Type, List<Type>>();
+            dependencies[typeof (Class1)] = new List<Type>
+                {
+                    typeof (Class1),
+                };
+            var exception = Assert.Throws<Exception>(() => new TypeSorter(dependencies));
+            var expected = @"Cyclic dependency detected.
+'Class1' wants to run after 'Class1'.
+".Replace("\r\n","").Replace("\n","");
+            Assert.AreEqual(expected, exception.Message.Replace("\r\n", "").Replace("\n", ""));
+        }
+
+        class Class1
+        {
+        }
+
+    }
 }
