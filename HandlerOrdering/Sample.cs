@@ -1,8 +1,8 @@
 ﻿using HandlerOrdering;
-using NUnit.Framework;
+using Scalpel;
 
 
-[TestFixture]
+[Remove]
 public class Sample
 {
 
