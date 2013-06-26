@@ -13,10 +13,10 @@
     <description>Allows a more expressive way to order NServiceBus handlers.</description>
     <summary />
     <language>en-AU</language>
-    <tags>NSericeBus, HandlerOrdering</tags>
+    <tags>NServiceBus, HandlerOrdering</tags>
 	  <dependencies>
 		  <group targetFramework=".NETFramework4.0">
-			  <dependency id="NServiceBus" version="3.3.5" />
+			  <dependency id="NServiceBus" version="3.3.8" />
 		  </group>
 	  </dependencies>
   </metadata>
