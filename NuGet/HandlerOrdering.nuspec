@@ -11,7 +11,6 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://raw.github.com/SimonCropp/HandlerOrdering/master/Icons/package_icon.png</iconUrl>
     <description>Allows a more expressive way to order NServiceBus handlers.</description>
-    <summary />
     <language>en-AU</language>
     <tags>NServiceBus, HandlerOrdering</tags>
 	  <dependencies>
