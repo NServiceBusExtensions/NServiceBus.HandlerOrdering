@@ -37,8 +37,8 @@ namespace HandlerOrdering
                     for (var index = 0; index < stack.Count-1; index++)
                     {
                         var type = stack[index];
-                        var dependantType = stack[index + 1];
-                        stringBuilder.AppendLine(string.Format("'{0}' wants to run after '{1}'.", type.Name, dependantType.Name));
+                        var dependentType = stack[index + 1];
+                        stringBuilder.AppendLine(string.Format("'{0}' wants to run after '{1}'.", type.Name, dependentType.Name));
                     }
 
                     throw new Exception(stringBuilder.ToString() );
@@ -49,9 +49,9 @@ namespace HandlerOrdering
             List<Type> values;
             if (dependencies.TryGetValue(item, out values))
             {
-                foreach (var dep in values)
+                foreach (var dependency in values)
                 {
-                    Visit(dep);
+                    Visit(dependency);
                 }
             }
             sorted.Add(item);

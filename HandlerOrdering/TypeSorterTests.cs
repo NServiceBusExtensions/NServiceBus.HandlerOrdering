@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using HandlerOrdering;
 using NUnit.Framework;
 
-[TestFixture]
 public class TypeSorterTests
 {
 
