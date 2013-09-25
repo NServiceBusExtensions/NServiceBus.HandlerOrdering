@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandlerOrdering", "HandlerOrdering\HandlerOrdering.csproj", "{6252324B-3DE9-4DA1-B531-C1555B8D7C8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nuget", "NuGet\Nuget.csproj", "{63786CE5-D899-43DF-AD4E-C2CA3BAC3FC2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleOnNSB4", "SampleOnNSB4\SampleOnNSB4.csproj", "{161F9409-B0F7-4940-9C3A-988B8A9DBDD0}"
 EndProject
 Global
@@ -20,12 +18,6 @@ Global
 		{6252324B-3DE9-4DA1-B531-C1555B8D7C8D}.Deployable|Any CPU.Build.0 = Deployable|Any CPU
 		{6252324B-3DE9-4DA1-B531-C1555B8D7C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6252324B-3DE9-4DA1-B531-C1555B8D7C8D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{63786CE5-D899-43DF-AD4E-C2CA3BAC3FC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{63786CE5-D899-43DF-AD4E-C2CA3BAC3FC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{63786CE5-D899-43DF-AD4E-C2CA3BAC3FC2}.Deployable|Any CPU.ActiveCfg = Deployable|Any CPU
-		{63786CE5-D899-43DF-AD4E-C2CA3BAC3FC2}.Deployable|Any CPU.Build.0 = Deployable|Any CPU
-		{63786CE5-D899-43DF-AD4E-C2CA3BAC3FC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{63786CE5-D899-43DF-AD4E-C2CA3BAC3FC2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{161F9409-B0F7-4940-9C3A-988B8A9DBDD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{161F9409-B0F7-4940-9C3A-988B8A9DBDD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{161F9409-B0F7-4940-9C3A-988B8A9DBDD0}.Deployable|Any CPU.ActiveCfg = Debug|Any CPU

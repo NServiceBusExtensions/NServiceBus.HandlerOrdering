@@ -1,7 +1,6 @@
 ﻿using HandlerOrdering;
 using Scalpel;
 
-
 [Remove]
 public class Sample
 {

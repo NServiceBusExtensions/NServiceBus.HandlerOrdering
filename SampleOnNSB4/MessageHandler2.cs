@@ -12,3 +12,17 @@ public class MessageHandler2 : IHandleMessages<MyMessage>, IWantToRunAfter<Messa
 		Console.WriteLine("MessageHandler2");
 	}
 }
+
+
+//public class Foo : IWantToRunWhenBusStartsAndStops
+//{
+//    public void Start()
+//    {
+//        throw new System.NotImplementedException();
+//    }
+
+//    public void Stop()
+//    {
+//        throw new System.NotImplementedException();
+//    }
+//}
