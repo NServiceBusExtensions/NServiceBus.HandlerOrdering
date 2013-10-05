@@ -3,6 +3,25 @@ HandlerOrdering
 
 Allows a more expressive way to order [NServiceBus](http://nservicebus.com/) handlers.
 
+
+## Nuget
+
+There are two nuget packages
+
+### The [binary version](http://nuget.org/packages/HandlerOrdering/)
+
+This uses the standard approach to constructing a nuget package. It contains a dll which will be added as a reference to your project. You then deploy the binary with your project.
+
+    PM> Install-Package HandlerOrdering
+
+### The [code only version](http://nuget.org/packages/HandlerOrdering-CodeOnly/)
+
+This is a "code only" package that leverages the [Content Convention](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package#From_a_convention_based_working_directory) of Nuget to inject code files into your project. Note that this is only compatible with C# projects. 
+
+The benefits of this approach are ease of debugging and less files to deploy
+
+    PM> Install-Package HandlerOrdering-CodeOnly
+
 ## Existing approach
 
 The current approach to ordering handlers is using [ISpecifyMessageHandlerOrdering](http://support.nservicebus.com/customer/portal/articles/862397-how-do-i-specify-the-order-in-which-handlers-are-invoked)
@@ -39,12 +58,6 @@ And the order will be derived by these dependencies.
 ## Compatible versions
 
 Works with NServicebus 3.3.5 and higher including the new pre-release versions of 4.0.
-
-## Nuget
-
-Here is the nuget package http://nuget.org/packages/HandlerOrdering/
-
-
 
 ## Icon
 
