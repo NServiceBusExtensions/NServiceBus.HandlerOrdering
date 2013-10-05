@@ -55,10 +55,6 @@ So this project supports an interface syntax that allows specifying order by add
 
 And the order will be derived by these dependencies.
 
-## Compatible versions
-
-Works with NServicebus 3.3.5 and higher including the new pre-release versions of 4.0.
-
 ## Icon
 
 Icon courtesy of [The Noun Project](http://thenounproject.com)
