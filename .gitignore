@@ -41,6 +41,8 @@
 packages/
 ForSample/
 ChocolateyNuGetBuild/
+NuGetBuild/
+NuGetBuildCodeOnly/
 
 # Visual Studio profiler
 *.psess

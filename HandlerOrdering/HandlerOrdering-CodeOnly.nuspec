@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>HandlerOrdering-CodeOnly</id>
+    <version>$version$</version>
+    <title>HandlerOrdering-CodeOnly</title>
+    <authors>Simon Cropp</authors>
+    <owners>Simon Cropp</owners>
+    <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
+    <projectUrl>http://github.com/SimonCropp/HandlerOrdering</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://raw.github.com/SimonCropp/HandlerOrdering/master/Icons/package_icon.png</iconUrl>
+    <description>Allows a more expressive way to order NServiceBus handlers.</description>
+    <language>en-AU</language>
+    <tags>NServiceBus, HandlerOrdering</tags>
+	  <dependencies>
+		  <group targetFramework=".NETFramework4.0">
+			  <dependency id="NServiceBus" version="4.0.0" />
+		  </group>
+	  </dependencies>
+  </metadata>
+</package>

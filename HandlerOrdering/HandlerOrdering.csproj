@@ -47,6 +47,9 @@
     <DocumentationFile>bin\Deployable\HandlerOrdering.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="HandlerOrdering-CodeOnly.nuspec">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Fody.targets" />
     <None Include="HandlerOrdering.nuspec">
       <SubType>Designer</SubType>
@@ -93,13 +96,38 @@
     </ItemGroup>
     <Delete Files="@(FilesToDelete)" />
   </Target>
-  <UsingTask TaskName="PepitaPackage.WeavingTask" AssemblyFile="$(SolutionDir)Tools\Pepita\PepitaPackage.dll" />
+  <UsingTask TaskName="PepitaPackage.CreatePackageTask" AssemblyFile="$(SolutionDir)Tools\Pepita\PepitaPackage.dll" />
+  <UsingTask TaskName="FileUpdate" AssemblyFile="$(SolutionDir)Tools\MSBuild.Community.Tasks.dll" />
   <Target Name="AfterBuild" DependsOnTargets="Clean">
     <MakeDir Directories="$(SolutionDir)NuGetBuild" />
     <Copy SourceFiles="$(OutputPath)\HandlerOrdering.dll" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\NET40" />
     <Copy SourceFiles="$(OutputPath)\HandlerOrdering.pdb" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\NET40" />
     <Copy SourceFiles="$(OutputPath)\HandlerOrdering.xml" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\NET40" />
     <Copy SourceFiles="$(ProjectDir)\HandlerOrdering.nuspec" DestinationFolder="$(SolutionDir)NuGetBuild" />
-    <PepitaPackage.WeavingTask NuGetBuildDirectory="$(SolutionDir)NuGetBuild" MetadataAssembly="$(OutputPath)\HandlerOrdering.dll" />
+    <PepitaPackage.CreatePackageTask NuGetBuildDirectory="$(SolutionDir)NuGetBuild" MetadataAssembly="$(OutputPath)\HandlerOrdering.dll" />
+
+
+    
+    <Copy 
+      SourceFiles="$(ProjectDir)\IWantToRunAfter.cs" 
+      DestinationFiles="$(SolutionDir)NuGetBuildCodeOnly\Content\HandlerOrdering\IWantToRunAfter.cs.pp" />
+    <Copy 
+      SourceFiles="$(ProjectDir)\OrderHandlers.cs" 
+      DestinationFiles="$(SolutionDir)NuGetBuildCodeOnly\Content\HandlerOrdering\OrderHandlers.cs.pp" />
+    <Copy 
+      SourceFiles="$(ProjectDir)\TypeSorter.cs" 
+      DestinationFiles="$(SolutionDir)NuGetBuildCodeOnly\Content\HandlerOrdering\TypeSorter.cs.pp" />
+    <ItemGroup>
+      <CsFiles 
+        Include="$(SolutionDir)NuGetBuildCodeOnly\Content\HandlerOrdering\*.cs.pp" />
+    </ItemGroup>
+    <FileUpdate 
+      Files="@(CsFiles)" 
+      Regex="namespace HandlerOrdering" ReplacementText="namespace $rootnamespace$.HandlerOrdering" />
+    <Copy 
+      SourceFiles="$(ProjectDir)\HandlerOrdering-CodeOnly.nuspec" 
+      DestinationFolder="$(SolutionDir)NuGetBuildCodeOnly\" />
+    <PepitaPackage.CreatePackageTask NuGetBuildDirectory="$(SolutionDir)NuGetBuildCodeOnly" MetadataAssembly="$(OutputPath)\HandlerOrdering.dll" />
+
   </Target>
 </Project>
