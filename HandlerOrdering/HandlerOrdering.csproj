@@ -90,15 +90,17 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="Fody.targets" />
-  <Target Name="Clean">
-    <ItemGroup>
-      <FilesToDelete Include="$(SolutionDir)NuGetBuild\**\*.*" />
-    </ItemGroup>
-    <Delete Files="@(FilesToDelete)" />
-  </Target>
+
   <UsingTask TaskName="PepitaPackage.CreatePackageTask" AssemblyFile="$(SolutionDir)Tools\Pepita\PepitaPackage.dll" />
   <UsingTask TaskName="FileUpdate" AssemblyFile="$(SolutionDir)Tools\MSBuild.Community.Tasks.dll" />
-  <Target Name="AfterBuild" DependsOnTargets="Clean">
+  <Target Name="AfterBuild">
+
+    <ItemGroup>
+      <FilesToDelete Include="$(SolutionDir)NuGetBuild\**\*.*" />
+      <FilesToDelete Include="$(SolutionDir)NuGetBuildCodeOnly\**\*.*" />
+    </ItemGroup>
+    <Delete Files="@(FilesToDelete)" />
+
     <MakeDir Directories="$(SolutionDir)NuGetBuild" />
     <Copy SourceFiles="$(OutputPath)\HandlerOrdering.dll" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\NET40" />
     <Copy SourceFiles="$(OutputPath)\HandlerOrdering.pdb" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\NET40" />
