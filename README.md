@@ -1,3 +1,5 @@
+![Icon](https://raw.github.com/SimonCropp/HandlerOrdering/master/Icons/package_icon.png)
+
 HandlerOrdering
 ===============
 
@@ -26,6 +28,8 @@ The benefits of this approach are ease of debugging and less files to deploy
 
 The current approach to ordering handlers is using [ISpecifyMessageHandlerOrdering](http://support.nservicebus.com/customer/portal/articles/862397-how-do-i-specify-the-order-in-which-handlers-are-invoked)
 
+### Using `ISpecifyMessageHandlerOrdering`
+
 
     public class EndpointConfig : ISpecifyMessageHandlerOrdering
     {
@@ -35,9 +39,21 @@ The current approach to ordering handlers is using [ISpecifyMessageHandlerOrderi
         }
     }
 
+Note that multiple `ISpecifyMessageHandlerOrdering` can be used to further simplify the above code.
+
+### Using `LoadMessageHandlers`
+
+    NServiceBus.Configure.With()
+     ...
+     .UnicastBus()
+          .LoadMessageHandlers<First<YourHandler>>()
+     ...
+
+
+
 ## Alternative approach
 
-This sometimes results in hard to read code, especially when the number of handlers increases. Also sometimes the full expression of order is not important. Rather it is important that a given handler is executed after some other handler(s).
+The above approaches can sometimes results in hard to read code, especially when the number of handlers increases. Also sometimes the full expression of order is not important. Rather it is important that a given handler is executed after some other handler(s).
 
 So this project supports an interface syntax that allows specifying order by adding an a `IWantToRunAfter<THandler>` to  handler(s). For example.
 
