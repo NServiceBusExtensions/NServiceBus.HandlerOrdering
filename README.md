@@ -3,7 +3,7 @@
 HandlerOrdering
 ===============
 
-Allows a more expressive way to order [NServiceBus](http://nservicebus.com/) handlers.
+Allows a more expressive way to order [NServiceBus](http://particular.net/NServiceBus) handlers.
 
 
 ## Nuget
@@ -26,10 +26,11 @@ The benefits of this approach are ease of debugging and less files to deploy
 
 ## Existing approach
 
-The current approach to ordering handlers is using [ISpecifyMessageHandlerOrdering](http://support.nservicebus.com/customer/portal/articles/862397-how-do-i-specify-the-order-in-which-handlers-are-invoked)
+The current approach to ordering handlers can be seen here [How to Specify the Order in which Handlers Are Invoked?](http://particular.net/articles/how-do-i-specify-the-order-in-which-handlers-are-invoked). 
+
+For example:
 
 ### Using `ISpecifyMessageHandlerOrdering`
-
 
     public class EndpointConfig : ISpecifyMessageHandlerOrdering
     {
@@ -48,8 +49,6 @@ Note that multiple `ISpecifyMessageHandlerOrdering` can be used to further simpl
      .UnicastBus()
           .LoadMessageHandlers<First<YourHandler>>()
      ...
-
-
 
 ## Alternative approach
 
