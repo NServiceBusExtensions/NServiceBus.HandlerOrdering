@@ -1,10 +1,9 @@
 ﻿using System;
-using System.ServiceProcess;
 using HandlerOrdering.Sample;
 using NServiceBus;
 using NServiceBus.Installation.Environments;
 
-public class Program : ServiceBase
+public class Program 
 {
 	static void Main()
 	{

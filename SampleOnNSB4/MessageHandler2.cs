@@ -13,16 +13,3 @@ public class MessageHandler2 : IHandleMessages<MyMessage>, IWantToRunAfter<Messa
 	}
 }
 
-
-//public class Foo : IWantToRunWhenBusStartsAndStops
-//{
-//    public void Start()
-//    {
-//        throw new System.NotImplementedException();
-//    }
-
-//    public void Stop()
-//    {
-//        throw new System.NotImplementedException();
-//    }
-//}
