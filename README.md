@@ -10,13 +10,13 @@ Allows a more expressive way to order [NServiceBus](http://particular.net/NServi
 
 There are two nuget packages
 
-### The [binary version](http://nuget.org/packages/HandlerOrdering/)
+### The [binary version](http://nuget.org/packages/HandlerOrdering/)  [![NuGet Status](http://img.shields.io/nuget/v/HandlerOrdering.svg?style=flat)](https://www.nuget.org/packages/HandlerOrdering/)
 
 This uses the standard approach to constructing a nuget package. It contains a dll which will be added as a reference to your project. You then deploy the binary with your project.
 
     PM> Install-Package HandlerOrdering
 
-### The [code only version](http://nuget.org/packages/HandlerOrdering-CodeOnly/)
+### The [code only version](http://nuget.org/packages/HandlerOrdering-CodeOnly/)  [![NuGet Status](http://img.shields.io/nuget/v/HandlerOrdering-CodeOnly.svg?style=flat)](https://www.nuget.org/packages/HandlerOrdering-CodeOnly/)
 
 This is a "code only" package that leverages the [Content Convention](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package#From_a_convention_based_working_directory) of Nuget to inject code files into your project. Note that this is only compatible with C# projects. 
 
