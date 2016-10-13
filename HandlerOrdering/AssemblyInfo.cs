@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 
-[assembly: AssemblyTitle("HandlerOrdering")]
-[assembly: AssemblyProduct("HandlerOrdering")]
-[assembly: AssemblyVersion("2.0.0")]
-[assembly: AssemblyFileVersion("2.0.0")]
+[assembly: AssemblyTitle("NServiceBus.HandlerOrdering")]
+[assembly: AssemblyProduct("NServiceBus.HandlerOrdering")]
+[assembly: AssemblyVersion("1.0.0")]
+[assembly: AssemblyFileVersion("1.0.0")]
 [assembly: InternalsVisibleTo("Tests")]

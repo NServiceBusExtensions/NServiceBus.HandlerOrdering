@@ -4,17 +4,17 @@
 HandlerOrdering
 ===============
 
-Allows a more expressive way to order [NServiceBus](http://particular.net/NServiceBus) handlers.
+Allows a more expressive way to order [NServiceBus](https://docs.particular.net/nservicebus/) handlers.
 
 
 ## NuGet
 
-http://nuget.org/packages/HandlerOrdering/ [![NuGet Status](http://img.shields.io/nuget/v/HandlerOrdering.svg?style=flat)](https://www.nuget.org/packages/HandlerOrdering/)
+https://www.nuget.org/packages/NServiceBus.HandlerOrdering/ [![NuGet Status](http://img.shields.io/nuget/v/HandlerOrdering.svg?style=flat)](https://www.nuget.org/packages/NServiceBus.HandlerOrdering/)
 
-    PM> Install-Package HandlerOrdering
+    PM> Install-Package NServiceBus.HandlerOrdering
 
 
-## Usage 
+## Usage
 
 ```
 endpointConfiguration.ApplyInterfaceHandlerOrdering();
@@ -26,7 +26,6 @@ endpointConfiguration.ApplyInterfaceHandlerOrdering();
 The current approach to ordering handlers can be seen at [Handler Ordering](https://docs.particular.net/nservicebus/handlers/handler-ordering).
 
 For example:
-
 
 ```
 endpointConfiguration.ExecuteTheseHandlersFirst(typeof(HandlerB), typeof(HandlerA), typeof(HandlerC));
@@ -46,7 +45,7 @@ public class HandlerA :
 }
 
 public class HandlerB :
-        IWantToRunAfter<HandlerA>, 
+        IWantToRunAfter<HandlerA>,
         IWantToRunAfter<HandlerC>
 {
 }
