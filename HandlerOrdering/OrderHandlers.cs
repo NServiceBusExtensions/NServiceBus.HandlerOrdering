@@ -1,33 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using NServiceBus;
+
 namespace HandlerOrdering
 {
-    class OrderHandlers : ISpecifyMessageHandlerOrdering
+    class OrderHandlers : INeedInitialization
     {
 
-        public void SpecifyOrder(Order order)
+        public void Customize(EndpointConfiguration configuration)
         {
-            var handlerDependencies = GetHandlerDependencies();
+            if (configuration.GetApplyInterfaceHandlerOrdering())
+            {
+                ApplyInterfaceHandlerOrdering(configuration);
+            }
+        }
+
+        public void ApplyInterfaceHandlerOrdering(EndpointConfiguration endpointConfiguration)
+        {
+            var handlerDependencies = GetHandlerDependencies(endpointConfiguration);
             var sorted = new TypeSorter(handlerDependencies).Sorted;
-            order.GetType()
-                 .GetProperty("Types")
-                 .SetValue(order, sorted, null);
+            endpointConfiguration.ExecuteTheseHandlersFirst(sorted);
         }
 
-        public static Dictionary<Type, List<Type>> GetHandlerDependencies()
+        internal static Dictionary<Type, List<Type>> GetHandlerDependencies(EndpointConfiguration endpointConfiguration)
         {
-            var enumerable = (IEnumerable<Type>) typeof (Configure).GetProperty("TypesToScan").GetValue(null);
-            return GetHandlerDependencies(enumerable);
+            var field = typeof(EndpointConfiguration)
+                .GetField("scannedTypes", BindingFlags.Instance | BindingFlags.NonPublic);
+            if (field == null)
+            {
+                throw new Exception($"Could not extract 'scannedTypes' field from {nameof(EndpointConfiguration)}. Raise an issue here https://github.com/SimonCropp/HandlerOrdering/issues/new");
+            }
+            var types = (List<Type>) field.GetValue(endpointConfiguration);
+            return GetHandlerDependencies(types);
         }
 
-        public static Dictionary<Type, List<Type>> GetHandlerDependencies(params Type[] types)
-        {
-            return GetHandlerDependencies((IEnumerable<Type>)types);
-        }
-
-        public static Dictionary<Type, List<Type>> GetHandlerDependencies(IEnumerable<Type> types)
+        internal static Dictionary<Type, List<Type>> GetHandlerDependencies(List<Type> types)
         {
             var dictionary = new Dictionary<Type, List<Type>>();
             foreach (var type in types)
@@ -35,7 +44,6 @@ namespace HandlerOrdering
                 var interfaces = type.GetInterfaces();
                 foreach (var face in interfaces)
                 {
-
                     if (!face.IsGenericType)
                     {
                         continue;

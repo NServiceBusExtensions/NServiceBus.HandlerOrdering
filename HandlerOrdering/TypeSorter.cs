@@ -32,16 +32,16 @@ namespace HandlerOrdering
                 if (!sorted.Contains(item))
                 {
                     stack.Reverse();
-					var stringBuilder = new StringBuilder();
+                    var stringBuilder = new StringBuilder();
                     stringBuilder.AppendLine("Cyclic dependency detected.");
-                    for (var index = 0; index < stack.Count-1; index++)
+                    for (var index = 0; index < stack.Count - 1; index++)
                     {
                         var type = stack[index];
                         var dependentType = stack[index + 1];
-                        stringBuilder.AppendLine(string.Format("'{0}' wants to run after '{1}'.", type.Name, dependentType.Name));
+                        stringBuilder.AppendLine($"'{type.Name}' wants to run after '{dependentType.Name}'.");
                     }
 
-                    throw new Exception(stringBuilder.ToString() );
+                    throw new Exception(stringBuilder.ToString());
                 }
                 return;
             }

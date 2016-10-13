@@ -1,54 +1,37 @@
 ![Icon](https://raw.github.com/SimonCropp/HandlerOrdering/master/Icons/package_icon.png)
 
+
 HandlerOrdering
 ===============
 
 Allows a more expressive way to order [NServiceBus](http://particular.net/NServiceBus) handlers.
 
 
-## Nuget
+## NuGet
 
-There are two nuget packages
-
-### The [binary version](http://nuget.org/packages/HandlerOrdering/)  [![NuGet Status](http://img.shields.io/nuget/v/HandlerOrdering.svg?style=flat)](https://www.nuget.org/packages/HandlerOrdering/)
-
-This uses the standard approach to constructing a nuget package. It contains a dll which will be added as a reference to your project. You then deploy the binary with your project.
+http://nuget.org/packages/HandlerOrdering/ [![NuGet Status](http://img.shields.io/nuget/v/HandlerOrdering.svg?style=flat)](https://www.nuget.org/packages/HandlerOrdering/)
 
     PM> Install-Package HandlerOrdering
 
-### The [code only version](http://nuget.org/packages/HandlerOrdering-CodeOnly/)  [![NuGet Status](http://img.shields.io/nuget/v/HandlerOrdering-CodeOnly.svg?style=flat)](https://www.nuget.org/packages/HandlerOrdering-CodeOnly/)
 
-This is a "code only" package that leverages the [Content Convention](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package#From_a_convention_based_working_directory) of Nuget to inject code files into your project. Note that this is only compatible with C# projects. 
+## Usage 
 
-The benefits of this approach are ease of debugging and less files to deploy
+```
+endpointConfiguration.ApplyInterfaceHandlerOrdering();
+```
 
-    PM> Install-Package HandlerOrdering-CodeOnly
 
 ## Existing approach
 
-The current approach to ordering handlers can be seen here [How to Specify the Order in which Handlers Are Invoked?](http://particular.net/articles/how-do-i-specify-the-order-in-which-handlers-are-invoked). 
+The current approach to ordering handlers can be seen at [Handler Ordering](https://docs.particular.net/nservicebus/handlers/handler-ordering).
 
 For example:
 
-### Using `ISpecifyMessageHandlerOrdering`
 
-    public class EndpointConfig : ISpecifyMessageHandlerOrdering
-    {
-        public void SpecifyOrder(Order order)
-        {
-            order.Specify(First<HandlerC>.Then<HandlerA>().AndThen<HandlerB>());
-        }
-    }
+```
+endpointConfiguration.ExecuteTheseHandlersFirst(typeof(HandlerB), typeof(HandlerA), typeof(HandlerC));
+```
 
-Note that multiple `ISpecifyMessageHandlerOrdering` can be used to further simplify the above code.
-
-### Using `LoadMessageHandlers`
-
-    NServiceBus.Configure.With()
-     ...
-     .UnicastBus()
-          .LoadMessageHandlers<First<YourHandler>>()
-     ...
 
 ## Alternative approach
 
@@ -56,25 +39,26 @@ The above approaches can sometimes results in hard to read code, especially when
 
 So this project supports an interface syntax that allows specifying order by adding an a `IWantToRunAfter<THandler>` to  handler(s). For example.
 
-    public class HandlerA : IWantToRunAfter<HandlerC>
-    {
-    }
+```
+public class HandlerA :
+        IWantToRunAfter<HandlerC>
+{
+}
 
-    public class HandlerB : IWantToRunAfter<HandlerA>, IWantToRunAfter<HandlerC>
-    {
-    }
+public class HandlerB :
+        IWantToRunAfter<HandlerA>, 
+        IWantToRunAfter<HandlerC>
+{
+}
 
-    public class HandlerC
-    {
-    }
+public class HandlerC
+{
+}
+```
 
 And the order will be derived by these dependencies.
+
 
 ## Icon
 
 Icon courtesy of [The Noun Project](http://thenounproject.com)
-
-
-
- 
-
