@@ -38,7 +38,9 @@
     <None Include="HandlerOrdering.nuspec">
       <SubType>Designer</SubType>
     </None>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <Reference Include="NServiceBus.Core, Version=6.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
       <HintPath>..\packages\NServiceBus.6.0.0\lib\net452\NServiceBus.Core.dll</HintPath>
       <Private>True</Private>
@@ -57,18 +59,23 @@
     <Compile Include="TypeSorter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <UsingTask TaskName="PepitaPackage.CreatePackageTask" AssemblyFile="$(SolutionDir)Tools\PepitaPackage.dll" />
-  <UsingTask TaskName="FileUpdate" AssemblyFile="$(SolutionDir)Tools\MSBuild.Community.Tasks.dll" />
   <Target Name="AfterBuild">
     <ItemGroup>
       <FilesToDelete Include="$(SolutionDir)NuGetBuild\**\*.*" />
     </ItemGroup>
     <Delete Files="@(FilesToDelete)" />
     <MakeDir Directories="$(SolutionDir)NuGetBuild" />
-    <Copy SourceFiles="$(OutputPath)\HandlerOrdering.dll" DestinationFolder="$(SolutionDir)NuGetBuild\lib\net452" />
-    <Copy SourceFiles="$(OutputPath)\HandlerOrdering.pdb" DestinationFolder="$(SolutionDir)NuGetBuild\lib\net452" />
-    <Copy SourceFiles="$(OutputPath)\HandlerOrdering.xml" DestinationFolder="$(SolutionDir)NuGetBuild\lib\net452" />
+    <Copy SourceFiles="$(OutputPath)\HandlerOrdering.dll" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\NET452" />
+    <Copy SourceFiles="$(OutputPath)\HandlerOrdering.pdb" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\NET452" />
+    <Copy SourceFiles="$(OutputPath)\HandlerOrdering.xml" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\NET452" />
     <Copy SourceFiles="$(ProjectDir)\HandlerOrdering.nuspec" DestinationFolder="$(SolutionDir)NuGetBuild" />
     <PepitaPackage.CreatePackageTask NuGetBuildDirectory="$(SolutionDir)NuGetBuild" MetadataAssembly="$(OutputPath)\HandlerOrdering.dll" />
+  </Target>
+  <Import Project="..\packages\PepitaPackage.1.21.4\build\PepitaPackage.targets" Condition="Exists('..\packages\PepitaPackage.1.21.4\build\PepitaPackage.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\PepitaPackage.1.21.4\build\PepitaPackage.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PepitaPackage.1.21.4\build\PepitaPackage.targets'))" />
   </Target>
 </Project>
