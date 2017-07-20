@@ -16,6 +16,7 @@ static class Program
         Console.Title = "Samples.HandlerOrdering";
         var endpointConfiguration = new EndpointConfiguration("Samples.HandlerOrdering");
 
+        endpointConfiguration.UseTransport<LearningTransport>();
         endpointConfiguration.UsePersistence<InMemoryPersistence>();
         endpointConfiguration.EnableInstallers();
         endpointConfiguration.SendFailedMessagesTo("error");
