@@ -8,8 +8,4 @@
   <ItemGroup>
     <ProjectReference Include="..\HandlerOrdering\HandlerOrdering.csproj" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
-    <PackageReference Include="System.IO.Compression" Version="4.*" />
-    <PackageReference Include="System.Runtime" Version="4.*" />
-  </ItemGroup>
 </Project>
