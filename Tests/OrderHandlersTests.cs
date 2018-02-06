@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using HandlerOrdering;
-using NUnit.Framework;
+using Xunit;
 
 public class OrderHandlersTests
 {
-    [TestFixture]
     public class Ensure_cascading_dependencies_are_resolved
     {
-        [Test]
+        [Fact]
         public void Run()
         {
             var types = new List<Type>
@@ -36,5 +35,4 @@ public class OrderHandlersTests
         {
         }
     }
-
 }

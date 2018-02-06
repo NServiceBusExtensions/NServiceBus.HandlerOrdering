@@ -7,7 +7,6 @@ using NServiceBus;
 
 class OrderHandlers : INeedInitialization
 {
-
     public void Customize(EndpointConfiguration configuration)
     {
         if (configuration.GetApplyInterfaceHandlerOrdering())
@@ -23,7 +22,7 @@ class OrderHandlers : INeedInitialization
         endpointConfiguration.ExecuteTheseHandlersFirst(sorted);
     }
 
-    internal static Dictionary<Type, List<Type>> GetHandlerDependencies(EndpointConfiguration endpointConfiguration)
+    static Dictionary<Type, List<Type>> GetHandlerDependencies(EndpointConfiguration endpointConfiguration)
     {
         var field = typeof(EndpointConfiguration)
             .GetField("scannedTypes", BindingFlags.Instance | BindingFlags.NonPublic);
@@ -60,5 +59,4 @@ class OrderHandlers : INeedInitialization
         }
         return dictionary;
     }
-
 }

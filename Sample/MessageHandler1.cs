@@ -18,5 +18,4 @@ public class MessageHandler1 :
         Console.WriteLine("MessageHandler1");
         return Task.CompletedTask;
     }
-
 }

@@ -2,7 +2,6 @@
 
 public class Sample
 {
-
     public class Handler1 :
         IWantToRunAfter<Handler3>
     {
@@ -17,5 +16,4 @@ public class Sample
     public class Handler3
     {
     }
-
 }

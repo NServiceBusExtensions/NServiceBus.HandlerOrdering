@@ -6,27 +6,20 @@ using NServiceBus;
 
 static class Program
 {
-    static void Main()
-    {
-        AsyncMain().GetAwaiter().GetResult();
-    }
-
-    static async Task AsyncMain()
+    static async Task Main()
     {
         Console.Title = "Samples.HandlerOrdering";
-        var endpointConfiguration = new EndpointConfiguration("Samples.HandlerOrdering");
+        var configuration = new EndpointConfiguration("Samples.HandlerOrdering");
 
-        endpointConfiguration.UseTransport<LearningTransport>();
-        endpointConfiguration.UsePersistence<InMemoryPersistence>();
-        endpointConfiguration.EnableInstallers();
-        endpointConfiguration.SendFailedMessagesTo("error");
+        configuration.UseTransport<LearningTransport>();
+        configuration.UsePersistence<InMemoryPersistence>();
+        configuration.EnableInstallers();
+        configuration.SendFailedMessagesTo("error");
 
-        endpointConfiguration.ApplyInterfaceHandlerOrdering();
+        configuration.ApplyInterfaceHandlerOrdering();
 
-        var endpointInstance = await Endpoint.Start(endpointConfiguration)
-            .ConfigureAwait(false);
-        await endpointInstance.SendLocal(new MyMessage())
-            .ConfigureAwait(false);
+        var endpointInstance = await Endpoint.Start(configuration);
+        await endpointInstance.SendLocal(new MyMessage());
         Console.ReadLine();
     }
 }

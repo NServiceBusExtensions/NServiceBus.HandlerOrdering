@@ -39,13 +39,7 @@
 *.dotCover
 *test-results*
 
-
-##  If you have NuGet Package Restore enabled, uncomment this
-packages/
-ForSample/
-ChocolateyNuGetBuild/
-NuGetBuild/
-NuGetBuildCodeOnly/
+nugets/
 
 # Visual Studio profiler
 *.psess

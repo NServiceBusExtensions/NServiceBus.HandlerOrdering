@@ -8,6 +8,7 @@ namespace HandlerOrdering
     {
         public static void ApplyInterfaceHandlerOrdering(this EndpointConfiguration configuration)
         {
+            Guard.AgainstNull(configuration, nameof(configuration));
             var settings = configuration.GetSettings();
             settings.Set("HandlerOrdering.ApplyInterfaceHandlerOrdering", true);
         }

@@ -6,6 +6,6 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HandlerOrdering\HandlerOrdering.csproj" />
+    <ProjectReference Include="..\HandlerOrdering\NServiceBus.HandlerOrdering.csproj" />
   </ItemGroup>
 </Project>

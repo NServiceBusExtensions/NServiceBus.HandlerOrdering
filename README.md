@@ -1,4 +1,4 @@
-![Icon](https://raw.github.com/SimonCropp/HandlerOrdering/master/Icons/package_icon.png)
+![Icon](https://raw.github.com/SimonCropp/NServiceBus.HandlerOrdering/master/package_icon.png)
 
 
 NServiceBus.HandlerOrdering
