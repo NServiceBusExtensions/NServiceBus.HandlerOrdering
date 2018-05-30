@@ -1,4 +1,4 @@
-![Icon](https://raw.github.com/SimonCropp/NServiceBus.HandlerOrdering/master/package_icon.png)
+![Icon](https://raw.github.com/NServiceBusExtensions/NServiceBus.HandlerOrdering/master/icon.png)
 
 
 NServiceBus.HandlerOrdering
@@ -21,7 +21,7 @@ endpointConfiguration.ApplyInterfaceHandlerOrdering();
 
 ## Documentation
 
-https://docs.particular.net/nservicebus/handlers/handler-ordering-by-interface
+https://docs.particular.net/nuget/NServiceBus.HandlerOrdering
 
 
 ## Icon

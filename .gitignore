@@ -10,12 +10,10 @@
 *.user
 *.sln.docstates
 *.pidb
-*.ncrunchsolution
-*.ncrunchproject
-*.DotSettings
-
 .learningtransport
-.vs/
+
+.vs
+*.received.txt
 
 # Build results
 [Dd]ebug/
@@ -39,6 +37,8 @@
 *.dotCover
 *test-results*
 
+.vs/
+.learningtransport/
 nugets/
 
 # Visual Studio profiler
@@ -74,8 +74,6 @@ UpgradeLog*.XML
 # Windows image file caches
 Thumbs.db
 
-nugetbuild
-
 # Folder config file
 Desktop.ini
 
@@ -85,3 +83,5 @@ Fody/.DS_Store
 .DS_Store
 
 *.userprefs
+*.jtconfig
+*.bak
