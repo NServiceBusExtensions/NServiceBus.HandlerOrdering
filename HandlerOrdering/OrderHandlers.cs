@@ -50,7 +50,7 @@ class OrderHandlers : INeedInitialization
                 {
                     continue;
                 }
-                if (!dictionary.TryGetValue(type, out List<Type> dependencies))
+                if (!dictionary.TryGetValue(type, out var dependencies))
                 {
                     dictionary[type] = dependencies = new List<Type>();
                 }

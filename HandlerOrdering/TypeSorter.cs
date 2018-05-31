@@ -44,8 +44,7 @@ class TypeSorter
             return;
         }
         visited.Add(item);
-        List<Type> values;
-        if (dependencies.TryGetValue(item, out values))
+        if (dependencies.TryGetValue(item, out var values))
         {
             foreach (var dependency in values)
             {
