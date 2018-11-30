@@ -28,7 +28,7 @@ class OrderHandlers : INeedInitialization
             .GetField("scannedTypes", BindingFlags.Instance | BindingFlags.NonPublic);
         if (field == null)
         {
-            throw new Exception($"Could not extract 'scannedTypes' field from {nameof(EndpointConfiguration)}. Raise an issue here https://github.com/SimonCropp/HandlerOrdering/issues/new");
+            throw new Exception($"Could not extract 'scannedTypes' field from {nameof(EndpointConfiguration)}. Raise an issue here https://github.com/NServiceBusExtensions/HandlerOrdering/issues/new");
         }
         var types = (List<Type>) field.GetValue(endpointConfiguration);
         return GetHandlerDependencies(types);
