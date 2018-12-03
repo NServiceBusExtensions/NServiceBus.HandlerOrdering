@@ -1,12 +1,4 @@
-![Icon](https://raw.github.com/NServiceBusExtensions/NServiceBus.HandlerOrdering/master/icon.png)
-
-
-NServiceBus.HandlerOrdering
-===========================
-
-This extension allows a more expressive way to [order handlers](https://docs.particular.net/nservicebus/handlers/handler-ordering).
-
-HandlerOrdering allows the dependency between handlers to be expressed via interfaces and the resulting order is derived at runtime.
+<img src="https://raw.github.com/NServiceBusExtensions/NServiceBus.HandlerOrdering/master/src/icon.png" height="25px"> This extension allows a more expressive way to [order handlers](https://docs.particular.net/nservicebus/handlers/handler-ordering). HandlerOrdering allows the dependency between handlers to be expressed via interfaces and the resulting order is derived at runtime.
 
 <!--- StartOpenCollectiveBackers -->
 
