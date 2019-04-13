@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using Xunit;
+using Xunit.Abstractions;
 
-public class TypeSorterTests
+public class TypeSorterTests :
+    XunitLoggingBase
 {
     public class SimpleSort
     {
@@ -104,5 +106,9 @@ public class TypeSorterTests
         class Class1
         {
         }
+    }
+
+    public TypeSorterTests(ITestOutputHelper output) : base(output)
+    {
     }
 }
