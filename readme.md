@@ -29,8 +29,6 @@ Thanks to all the backing developers! Support this project by [becoming a patron
 
 https://www.nuget.org/packages/NServiceBus.HandlerOrdering/ [![NuGet Status](http://img.shields.io/nuget/v/NServiceBus.HandlerOrdering.svg)](https://www.nuget.org/packages/NServiceBus.HandlerOrdering/)
 
-    PM> Install-Package NServiceBus.HandlerOrdering
-
 
 ## Usage
 
