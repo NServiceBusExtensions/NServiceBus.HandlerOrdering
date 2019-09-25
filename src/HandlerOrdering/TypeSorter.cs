@@ -7,7 +7,7 @@ class TypeSorter
 {
     Dictionary<Type, List<Type>> dependencies;
     List<Type> sorted = new List<Type>();
-    List<Type> stack;
+    List<Type> stack = null!;
     public ReadOnlyCollection<Type> Sorted;
     HashSet<Type> visited = new HashSet<Type>();
 
