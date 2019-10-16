@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
     <OutputType>Exe</OutputType>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HandlerOrdering\NServiceBus.HandlerOrdering.csproj" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.26" PrivateAssets="All" />
+    <PackageReference Include="NServiceBus" Version="7.*" />
+    <PackageReference Include="NServiceBus.HandlerOrdering" Version="3.*" />
   </ItemGroup>
 </Project>

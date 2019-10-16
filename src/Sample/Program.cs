@@ -1,25 +1,28 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using HandlerOrdering;
-using HandlerOrdering.Sample;
 using NServiceBus;
 
-static class Program
+class Program
 {
     static async Task Main()
     {
         Console.Title = "Samples.HandlerOrdering";
-        var configuration = new EndpointConfiguration("Samples.HandlerOrdering");
+        var endpointConfiguration = new EndpointConfiguration("Samples.HandlerOrdering");
+        endpointConfiguration.UsePersistence<LearningPersistence>();
+        endpointConfiguration.UseTransport<LearningTransport>();
+        #region config
+        endpointConfiguration.ApplyInterfaceHandlerOrdering();
+        #endregion
 
-        configuration.UseTransport<LearningTransport>();
-        configuration.UsePersistence<InMemoryPersistence>();
-        configuration.EnableInstallers();
-        configuration.SendFailedMessagesTo("error");
-
-        configuration.ApplyInterfaceHandlerOrdering();
-
-        var endpointInstance = await Endpoint.Start(configuration);
-        await endpointInstance.SendLocal(new MyMessage());
-        Console.ReadLine();
+        var endpointInstance = await Endpoint.Start(endpointConfiguration)
+            .ConfigureAwait(false);
+        var myMessage = new MyMessage();
+        await endpointInstance.SendLocal(myMessage)
+            .ConfigureAwait(false);
+        Console.WriteLine("Press any key to exit");
+        Console.ReadKey();
+        await endpointInstance.Stop()
+            .ConfigureAwait(false);
     }
 }

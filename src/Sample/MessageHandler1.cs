@@ -1,21 +1,23 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Threading.Tasks;
 using HandlerOrdering;
-using HandlerOrdering.Sample;
 using NServiceBus;
+using NServiceBus.Logging;
 
+#region express-order1
 public class MessageHandler1 :
     IHandleMessages<MyMessage>,
     IWantToRunAfter<MessageHandler3>
 {
+    #endregion
+    static ILog log = LogManager.GetLogger<MessageHandler1>();
     public static bool ReceivedMessage;
 
     public Task Handle(MyMessage message, IMessageHandlerContext context)
     {
         ReceivedMessage = true;
         Debug.Assert(MessageHandler3.ReceivedMessage);
-        Console.WriteLine("MessageHandler1");
+        log.Info("MessageHandler1");
         return Task.CompletedTask;
     }
 }
