@@ -7,7 +7,7 @@ To change this file edit the source file and then run MarkdownSnippets.
 
 # <img src="/src/icon.png" height="30px"> NServiceBus.HandlerOrdering
 
-[![Build status](https://ci.appveyor.com/api/projects/status/ad7ibwiqio3ocso4/branch/master?svg=true)](https://ci.appveyor.com/project/SimonCropp/NServiceBus.HandlerOrdering)
+[![Build status](https://ci.appveyor.com/api/projects/status/l2jg521r03ei7a3n/branch/master?svg=true)](https://ci.appveyor.com/project/SimonCropp/NServiceBus.HandlerOrdering)
 [![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.HandlerOrdering.svg?cacheSeconds=86400)](https://www.nuget.org/packages/NServiceBus.HandlerOrdering/)
 
 This extension allows a more expressive way to [order handlers](https://docs.particular.net/nservicebus/handlers/handler-ordering). HandlerOrdering allows the dependency between handlers to be expressed via interfaces and the resulting order is derived at runtime.
