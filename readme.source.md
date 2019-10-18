@@ -1,4 +1,11 @@
-<img src="/src/icon.png" height="25px"> This extension allows a more expressive way to [order handlers](https://docs.particular.net/nservicebus/handlers/handler-ordering). HandlerOrdering allows the dependency between handlers to be expressed via interfaces and the resulting order is derived at runtime.
+# <img src="/src/icon.png" height="30px"> NServiceBus.HandlerOrdering
+
+[![Build status](https://ci.appveyor.com/api/projects/status/ad7ibwiqio3ocso4/branch/master?svg=true)](https://ci.appveyor.com/project/SimonCropp/NServiceBus.HandlerOrdering)
+[![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.HandlerOrdering.svg?cacheSeconds=86400)](https://www.nuget.org/packages/NServiceBus.HandlerOrdering/)
+
+This extension allows a more expressive way to [order handlers](https://docs.particular.net/nservicebus/handlers/handler-ordering). HandlerOrdering allows the dependency between handlers to be expressed via interfaces and the resulting order is derived at runtime.
+
+toc
 
 <!--- StartOpenCollectiveBackers -->
 
@@ -24,11 +31,6 @@ Thanks to all the backing developers! Support this project by [becoming a patron
 <!--- EndOpenCollectiveBackers -->
 
 <a href="#" id="endofbacking"></a>
-
-## NuGet
-
-https://www.nuget.org/packages/NServiceBus.HandlerOrdering/ [![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.HandlerOrdering.svg)](https://www.nuget.org/packages/NServiceBus.HandlerOrdering/)
-
 
 ## Usage
 
@@ -83,6 +85,11 @@ snippet: express-order2
  1. MessageHandler3
  1. MessageHandler1
  1. MessageHandler2
+
+
+## Release Notes
+
+See [closed milestones](../../milestones?state=closed).
 
 
 ## Icon

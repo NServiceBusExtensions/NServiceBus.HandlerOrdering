@@ -5,7 +5,8 @@ using System.Reflection;
 using HandlerOrdering;
 using NServiceBus;
 
-class OrderHandlers : INeedInitialization
+class OrderHandlers :
+    INeedInitialization
 {
     public void Customize(EndpointConfiguration configuration)
     {

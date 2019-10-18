@@ -21,11 +21,14 @@ public class Ensure_cascading_dependencies_are_resolved
         Assert.Contains(typeof(Class3), handlerDependencies[typeof(Class2)]);
     }
 
-    class Class1 : IWantToRunAfter<Class2>, IWantToRunAfter<Class3>
+    class Class1 :
+        IWantToRunAfter<Class2>,
+        IWantToRunAfter<Class3>
     {
     }
 
-    class Class2 : IWantToRunAfter<Class3>
+    class Class2 :
+        IWantToRunAfter<Class3>
     {
     }
 

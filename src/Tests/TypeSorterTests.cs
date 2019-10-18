@@ -108,7 +108,8 @@ public class TypeSorterTests :
         }
     }
 
-    public TypeSorterTests(ITestOutputHelper output) : base(output)
+    public TypeSorterTests(ITestOutputHelper output) :
+        base(output)
     {
     }
 }
