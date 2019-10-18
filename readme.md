@@ -53,6 +53,7 @@ Thanks to all the backing developers! Support this project by [becoming a patron
 
 <a href="#" id="endofbacking"></a>
 
+
 ## Usage
 
 <!-- snippet: Usage -->
@@ -120,7 +121,7 @@ public class MessageHandler2 :
 
 ## Sample
 
-This sample demonstrates how to use interfaces to express dependencies between handlers.
+[The sample](/src/Sample) demonstrates how to use interfaces to express dependencies between handlers.
 
 
 ### Configuring to use HandlerOrdering
