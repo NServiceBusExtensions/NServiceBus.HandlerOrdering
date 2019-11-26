@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using VerifyXunit;
 using Xunit;
 using Xunit.Abstractions;
 
 public class TypeSorterTests :
-    XunitApprovalBase
+    VerifyBase
 {
     public class SimpleSort
     {
