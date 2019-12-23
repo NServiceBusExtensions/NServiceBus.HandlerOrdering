@@ -26,7 +26,7 @@ class OrderHandlers :
     static Dictionary<Type, List<Type>> GetHandlerDependencies(EndpointConfiguration endpointConfiguration)
     {
         var field = typeof(EndpointConfiguration)
-            .GetField("scannedTypes", BindingFlags.Instance | BindingFlags.NonPublic);
+            .GetField("ScannedTypes", BindingFlags.Instance | BindingFlags.NonPublic);
         if (field == null)
         {
             throw new Exception($"Could not extract 'scannedTypes' field from {nameof(EndpointConfiguration)}. Raise an issue here https://github.com/NServiceBusExtensions/HandlerOrdering/issues/new");
