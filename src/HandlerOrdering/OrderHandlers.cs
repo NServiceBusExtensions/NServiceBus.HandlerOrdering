@@ -16,14 +16,14 @@ class OrderHandlers :
         }
     }
 
-    public void ApplyInterfaceHandlerOrdering(EndpointConfiguration endpointConfiguration)
+    public void ApplyInterfaceHandlerOrdering(EndpointConfiguration configuration)
     {
         var handlerDependencies = GetHandlerDependencies(endpointConfiguration);
         var sorted = new TypeSorter(handlerDependencies).Sorted;
-        endpointConfiguration.ExecuteTheseHandlersFirst(sorted);
+        configuration.ExecuteTheseHandlersFirst(sorted);
     }
 
-    static Dictionary<Type, List<Type>> GetHandlerDependencies(EndpointConfiguration endpointConfiguration)
+    static Dictionary<Type, List<Type>> GetHandlerDependencies(EndpointConfiguration configuration)
     {
         var field = typeof(EndpointConfiguration)
             .GetField("scannedTypes", BindingFlags.Instance | BindingFlags.NonPublic);
@@ -31,7 +31,7 @@ class OrderHandlers :
         {
             throw new Exception($"Could not extract 'scannedTypes' field from {nameof(EndpointConfiguration)}. Raise an issue here https://github.com/NServiceBusExtensions/HandlerOrdering/issues/new");
         }
-        var types = (List<Type>) field.GetValue(endpointConfiguration);
+        var types = (List<Type>) field.GetValue(configuration);
         return GetHandlerDependencies(types);
     }
 

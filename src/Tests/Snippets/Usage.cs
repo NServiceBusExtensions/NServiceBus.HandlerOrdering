@@ -3,11 +3,11 @@ using NServiceBus;
 
 class Usage
 {
-    Usage(EndpointConfiguration endpointConfiguration)
+    Usage(EndpointConfiguration configuration)
     {
         #region Usage
 
-        endpointConfiguration.ApplyInterfaceHandlerOrdering();
+        configuration.ApplyInterfaceHandlerOrdering();
 
         #endregion
     }
