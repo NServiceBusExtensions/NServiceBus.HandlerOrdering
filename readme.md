@@ -24,9 +24,7 @@ This extension allows a more expressive way to [order handlers](https://docs.par
   * [Sample](#sample)
     * [Configuring to use HandlerOrdering](#configuring-to-use-handlerordering)
     * [Expressing dependencies](#expressing-dependencies-1)
-    * [Resulting execution order](#resulting-execution-order-1)
-<!-- endtoc -->
-
+    * [Resulting execution order](#resulting-execution-order-1)<!-- endtoc -->
 
 <!--- StartOpenCollectiveBackers -->
 
@@ -35,7 +33,7 @@ This extension allows a more expressive way to [order handlers](https://docs.par
 
 ## Community backed
 
-**It is expected that all developers [become a Patron](https://opencollective.com/nservicebusextensions/order/6976) to use any of these libraries. [Go to licensing FAQ](https://github.com/NServiceBusExtensions/Home/blob/master/readme.md#licensingpatron-faq)**
+**It is expected that all developers [become a Patron](https://opencollective.com/nservicebusextensions/order/6976) to use any of these libraries. [Go to licensing FAQ](https://github.com/NServiceBusExtensions/Home/#licensingpatron-faq)**
 
 
 ### Sponsors
@@ -54,14 +52,19 @@ Thanks to all the backing developers! Support this project by [becoming a patron
 <a href="#" id="endofbacking"></a>
 
 
+## NuGet package
+
+https://nuget.org/packages/NServiceBus.HandlerOrdering/
+
+
 ## Usage
 
 <!-- snippet: Usage -->
 <a id='snippet-usage'/></a>
 ```cs
-endpointConfiguration.ApplyInterfaceHandlerOrdering();
+configuration.ApplyInterfaceHandlerOrdering();
 ```
-<sup>[snippet source](/src/Tests/Snippets/Usage.cs#L8-L12) / [anchor](#snippet-usage)</sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L8-L12' title='File snippet `usage` was extracted from'>snippet source</a> | <a href='#snippet-usage' title='Navigate to start of snippet `usage`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -78,7 +81,7 @@ public class MessageHandler1 :
     IWantToRunAfter<MessageHandler3>
 {
 ```
-<sup>[snippet source](/src/Sample/MessageHandler1.cs#L7-L12) / [anchor](#snippet-express-order1)</sup>
+<sup><a href='/src/Sample/MessageHandler1.cs#L7-L12' title='File snippet `express-order1` was extracted from'>snippet source</a> | <a href='#snippet-express-order1' title='Navigate to start of snippet `express-order1`'>anchor</a></sup>
 <a id='snippet-express-order1-1'/></a>
 ```cs
 public class MessageHandler1 :
@@ -86,7 +89,7 @@ public class MessageHandler1 :
     IWantToRunAfter<MessageHandler3>
 {
 ```
-<sup>[snippet source](/src/Tests/Snippets/MessageHandler1.cs#L5-L10) / [anchor](#snippet-express-order1-1)</sup>
+<sup><a href='/src/Tests/Snippets/MessageHandler1.cs#L5-L10' title='File snippet `express-order1` was extracted from'>snippet source</a> | <a href='#snippet-express-order1-1' title='Navigate to start of snippet `express-order1`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -100,7 +103,7 @@ public class MessageHandler2 :
     IWantToRunAfter<MessageHandler1>
 {
 ```
-<sup>[snippet source](/src/Sample/MessageHandler2.cs#L8-L13) / [anchor](#snippet-express-order2)</sup>
+<sup><a href='/src/Sample/MessageHandler2.cs#L8-L13' title='File snippet `express-order2` was extracted from'>snippet source</a> | <a href='#snippet-express-order2' title='Navigate to start of snippet `express-order2`'>anchor</a></sup>
 <a id='snippet-express-order2-1'/></a>
 ```cs
 public class MessageHandler2 :
@@ -108,7 +111,7 @@ public class MessageHandler2 :
     IWantToRunAfter<MessageHandler1>
 {
 ```
-<sup>[snippet source](/src/Tests/Snippets/MessageHandler2.cs#L5-L10) / [anchor](#snippet-express-order2-1)</sup>
+<sup><a href='/src/Tests/Snippets/MessageHandler2.cs#L5-L10' title='File snippet `express-order2` was extracted from'>snippet source</a> | <a href='#snippet-express-order2-1' title='Navigate to start of snippet `express-order2`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -131,7 +134,7 @@ public class MessageHandler2 :
 ```cs
 endpointConfiguration.ApplyInterfaceHandlerOrdering();
 ```
-<sup>[snippet source](/src/Sample/Program.cs#L14-L16) / [anchor](#snippet-config)</sup>
+<sup><a href='/src/Sample/Program.cs#L14-L16' title='File snippet `config` was extracted from'>snippet source</a> | <a href='#snippet-config' title='Navigate to start of snippet `config`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -148,7 +151,7 @@ public class MessageHandler1 :
     IWantToRunAfter<MessageHandler3>
 {
 ```
-<sup>[snippet source](/src/Sample/MessageHandler1.cs#L7-L12) / [anchor](#snippet-express-order1)</sup>
+<sup><a href='/src/Sample/MessageHandler1.cs#L7-L12' title='File snippet `express-order1` was extracted from'>snippet source</a> | <a href='#snippet-express-order1' title='Navigate to start of snippet `express-order1`'>anchor</a></sup>
 <a id='snippet-express-order1-1'/></a>
 ```cs
 public class MessageHandler1 :
@@ -156,7 +159,7 @@ public class MessageHandler1 :
     IWantToRunAfter<MessageHandler3>
 {
 ```
-<sup>[snippet source](/src/Tests/Snippets/MessageHandler1.cs#L5-L10) / [anchor](#snippet-express-order1-1)</sup>
+<sup><a href='/src/Tests/Snippets/MessageHandler1.cs#L5-L10' title='File snippet `express-order1` was extracted from'>snippet source</a> | <a href='#snippet-express-order1-1' title='Navigate to start of snippet `express-order1`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -170,7 +173,7 @@ public class MessageHandler2 :
     IWantToRunAfter<MessageHandler1>
 {
 ```
-<sup>[snippet source](/src/Sample/MessageHandler2.cs#L8-L13) / [anchor](#snippet-express-order2)</sup>
+<sup><a href='/src/Sample/MessageHandler2.cs#L8-L13' title='File snippet `express-order2` was extracted from'>snippet source</a> | <a href='#snippet-express-order2' title='Navigate to start of snippet `express-order2`'>anchor</a></sup>
 <a id='snippet-express-order2-1'/></a>
 ```cs
 public class MessageHandler2 :
@@ -178,7 +181,7 @@ public class MessageHandler2 :
     IWantToRunAfter<MessageHandler1>
 {
 ```
-<sup>[snippet source](/src/Tests/Snippets/MessageHandler2.cs#L5-L10) / [anchor](#snippet-express-order2-1)</sup>
+<sup><a href='/src/Tests/Snippets/MessageHandler2.cs#L5-L10' title='File snippet `express-order2` was extracted from'>snippet source</a> | <a href='#snippet-express-order2-1' title='Navigate to start of snippet `express-order2`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
