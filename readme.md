@@ -22,7 +22,8 @@ This extension allows a more expressive way to [order handlers](https://docs.par
   * [Sample](#sample)
     * [Configuring to use HandlerOrdering](#configuring-to-use-handlerordering)
     * [Expressing dependencies](#expressing-dependencies-1)
-    * [Resulting execution order](#resulting-execution-order-1)<!-- endtoc -->
+    * [Resulting execution order](#resulting-execution-order-1)
+  * [Security contact information](#security-contact-information)<!-- endtoc -->
 
 <!--- StartOpenCollectiveBackers -->
 
@@ -182,9 +183,9 @@ public class MessageHandler2 :
  1. MessageHandler2
 
 
-## Release Notes
+## Security contact information
 
-See [closed milestones](../../milestones?state=closed).
+To report a security vulnerability, use the [Tidelift security contact](https://tidelift.com/security). Tidelift will coordinate the fix and disclosure.
 
 
 ## Icon
