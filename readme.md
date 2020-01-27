@@ -16,8 +16,6 @@ This extension allows a more expressive way to [order handlers](https://docs.par
 ## Contents
 
   * [Community backed](#community-backed)
-    * [Sponsors](#sponsors)
-    * [Patrons](#patrons)
   * [Usage](#usage)
   * [Expressing dependencies](#expressing-dependencies)
     * [Resulting execution order](#resulting-execution-order)
