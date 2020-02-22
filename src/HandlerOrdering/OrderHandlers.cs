@@ -18,7 +18,7 @@ class OrderHandlers :
 
     public void ApplyInterfaceHandlerOrdering(EndpointConfiguration configuration)
     {
-        var handlerDependencies = GetHandlerDependencies(endpointConfiguration);
+        var handlerDependencies = GetHandlerDependencies(configuration);
         var sorted = new TypeSorter(handlerDependencies).Sorted;
         configuration.ExecuteTheseHandlersFirst(sorted);
     }
