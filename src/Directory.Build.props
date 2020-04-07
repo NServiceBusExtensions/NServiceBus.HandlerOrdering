@@ -3,12 +3,5 @@
   <PropertyGroup>
     <Version>3.0.4</Version>
     <PackageTags>NServiceBus, Handler Ordering</PackageTags>
-    <PackageLicenseFile>license.txt</PackageLicenseFile>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
-  <ItemGroup>
-    <None Include="$(MSBuildThisFileFullPath)\..\..\license.txt"
-          Pack="true"
-          PackagePath="license.txt"/>
-  </ItemGroup>
 </Project>
