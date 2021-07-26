@@ -26,7 +26,7 @@ This extension allows a more expressive way to [order handlers](https://docs.par
     * [Configuring to use HandlerOrdering](#configuring-to-use-handlerordering)
     * [Expressing dependencies](#expressing-dependencies-1)
     * [Resulting execution order](#resulting-execution-order-1)
-  * [Security contact information](#security-contact-information)<!-- endtoc -->
+  * [Security contact information](#security-contact-information)<!-- endToc -->
 
 <!--- StartOpenCollectiveBackers -->
 
@@ -67,12 +67,12 @@ https://nuget.org/packages/NServiceBus.HandlerOrdering/
 ## Usage
 
 <!-- snippet: Usage -->
-<a id='snippet-usage'/></a>
+<a id='snippet-usage'></a>
 ```cs
 configuration.ApplyInterfaceHandlerOrdering();
 ```
-<sup><a href='/src/Tests/Snippets/Usage.cs#L8-L12' title='File snippet `usage` was extracted from'>snippet source</a> | <a href='#snippet-usage' title='Navigate to start of snippet `usage`'>anchor</a></sup>
-<!-- endsnippet -->
+<sup><a href='/src/Tests/Snippets/Usage.cs#L8-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-usage' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
 
 
 ## Expressing dependencies
@@ -81,45 +81,45 @@ configuration.ApplyInterfaceHandlerOrdering();
 #### MessageHandler1 wants to run after MessageHandler3
 
 <!-- snippet: express-order1 -->
-<a id='snippet-express-order1'/></a>
+<a id='snippet-express-order1'></a>
 ```cs
 public class MessageHandler1 :
     IHandleMessages<MyMessage>,
     IWantToRunAfter<MessageHandler3>
 {
 ```
-<sup><a href='/src/Sample/MessageHandler1.cs#L7-L12' title='File snippet `express-order1` was extracted from'>snippet source</a> | <a href='#snippet-express-order1' title='Navigate to start of snippet `express-order1`'>anchor</a></sup>
-<a id='snippet-express-order1-1'/></a>
+<sup><a href='/src/Sample/MessageHandler1.cs#L7-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-express-order1' title='Start of snippet'>anchor</a></sup>
+<a id='snippet-express-order1-1'></a>
 ```cs
 public class MessageHandler1 :
     IHandleMessages<MyMessage>,
     IWantToRunAfter<MessageHandler3>
 {
 ```
-<sup><a href='/src/Tests/Snippets/MessageHandler1.cs#L5-L10' title='File snippet `express-order1` was extracted from'>snippet source</a> | <a href='#snippet-express-order1-1' title='Navigate to start of snippet `express-order1`'>anchor</a></sup>
-<!-- endsnippet -->
+<sup><a href='/src/Tests/Snippets/MessageHandler1.cs#L5-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-express-order1-1' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
 
 
 #### MessageHandler2 wants to run after MessageHandler1
 
 <!-- snippet: express-order2 -->
-<a id='snippet-express-order2'/></a>
+<a id='snippet-express-order2'></a>
 ```cs
 public class MessageHandler2 :
     IHandleMessages<MyMessage>,
     IWantToRunAfter<MessageHandler1>
 {
 ```
-<sup><a href='/src/Sample/MessageHandler2.cs#L8-L13' title='File snippet `express-order2` was extracted from'>snippet source</a> | <a href='#snippet-express-order2' title='Navigate to start of snippet `express-order2`'>anchor</a></sup>
-<a id='snippet-express-order2-1'/></a>
+<sup><a href='/src/Sample/MessageHandler2.cs#L8-L13' title='Snippet source file'>snippet source</a> | <a href='#snippet-express-order2' title='Start of snippet'>anchor</a></sup>
+<a id='snippet-express-order2-1'></a>
 ```cs
 public class MessageHandler2 :
     IHandleMessages<MyMessage>,
     IWantToRunAfter<MessageHandler1>
 {
 ```
-<sup><a href='/src/Tests/Snippets/MessageHandler2.cs#L5-L10' title='File snippet `express-order2` was extracted from'>snippet source</a> | <a href='#snippet-express-order2-1' title='Navigate to start of snippet `express-order2`'>anchor</a></sup>
-<!-- endsnippet -->
+<sup><a href='/src/Tests/Snippets/MessageHandler2.cs#L5-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-express-order2-1' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
 
 
 ### Resulting execution order
@@ -137,12 +137,12 @@ public class MessageHandler2 :
 ### Configuring to use HandlerOrdering
 
 <!-- snippet: config -->
-<a id='snippet-config'/></a>
+<a id='snippet-config'></a>
 ```cs
 endpointConfiguration.ApplyInterfaceHandlerOrdering();
 ```
-<sup><a href='/src/Sample/Program.cs#L14-L16' title='File snippet `config` was extracted from'>snippet source</a> | <a href='#snippet-config' title='Navigate to start of snippet `config`'>anchor</a></sup>
-<!-- endsnippet -->
+<sup><a href='/src/Sample/Program.cs#L14-L16' title='Snippet source file'>snippet source</a> | <a href='#snippet-config' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
 
 
 ### Expressing dependencies
@@ -151,45 +151,45 @@ endpointConfiguration.ApplyInterfaceHandlerOrdering();
 #### MessageHandler1 wants to run after MessageHandler3
 
 <!-- snippet: express-order1 -->
-<a id='snippet-express-order1'/></a>
+<a id='snippet-express-order1'></a>
 ```cs
 public class MessageHandler1 :
     IHandleMessages<MyMessage>,
     IWantToRunAfter<MessageHandler3>
 {
 ```
-<sup><a href='/src/Sample/MessageHandler1.cs#L7-L12' title='File snippet `express-order1` was extracted from'>snippet source</a> | <a href='#snippet-express-order1' title='Navigate to start of snippet `express-order1`'>anchor</a></sup>
-<a id='snippet-express-order1-1'/></a>
+<sup><a href='/src/Sample/MessageHandler1.cs#L7-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-express-order1' title='Start of snippet'>anchor</a></sup>
+<a id='snippet-express-order1-1'></a>
 ```cs
 public class MessageHandler1 :
     IHandleMessages<MyMessage>,
     IWantToRunAfter<MessageHandler3>
 {
 ```
-<sup><a href='/src/Tests/Snippets/MessageHandler1.cs#L5-L10' title='File snippet `express-order1` was extracted from'>snippet source</a> | <a href='#snippet-express-order1-1' title='Navigate to start of snippet `express-order1`'>anchor</a></sup>
-<!-- endsnippet -->
+<sup><a href='/src/Tests/Snippets/MessageHandler1.cs#L5-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-express-order1-1' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
 
 
 #### MessageHandler2 wants to run after MessageHandler1
 
 <!-- snippet: express-order2 -->
-<a id='snippet-express-order2'/></a>
+<a id='snippet-express-order2'></a>
 ```cs
 public class MessageHandler2 :
     IHandleMessages<MyMessage>,
     IWantToRunAfter<MessageHandler1>
 {
 ```
-<sup><a href='/src/Sample/MessageHandler2.cs#L8-L13' title='File snippet `express-order2` was extracted from'>snippet source</a> | <a href='#snippet-express-order2' title='Navigate to start of snippet `express-order2`'>anchor</a></sup>
-<a id='snippet-express-order2-1'/></a>
+<sup><a href='/src/Sample/MessageHandler2.cs#L8-L13' title='Snippet source file'>snippet source</a> | <a href='#snippet-express-order2' title='Start of snippet'>anchor</a></sup>
+<a id='snippet-express-order2-1'></a>
 ```cs
 public class MessageHandler2 :
     IHandleMessages<MyMessage>,
     IWantToRunAfter<MessageHandler1>
 {
 ```
-<sup><a href='/src/Tests/Snippets/MessageHandler2.cs#L5-L10' title='File snippet `express-order2` was extracted from'>snippet source</a> | <a href='#snippet-express-order2-1' title='Navigate to start of snippet `express-order2`'>anchor</a></sup>
-<!-- endsnippet -->
+<sup><a href='/src/Tests/Snippets/MessageHandler2.cs#L5-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-express-order2-1' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
 
 
 ### Resulting execution order
