@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using HandlerOrdering;
-using Xunit;
+﻿using HandlerOrdering;
 
 public class Ensure_cascading_dependencies_are_resolved
 {

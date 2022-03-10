@@ -1,6 +1,4 @@
-﻿using System;
-
-static class Guard
+﻿static class Guard
 {
     public static void AgainstNull(object value, string argumentName)
     {

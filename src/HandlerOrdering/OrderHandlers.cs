@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using HandlerOrdering;
+﻿using HandlerOrdering;
 using NServiceBus;
 
 class OrderHandlers :
@@ -29,9 +25,9 @@ class OrderHandlers :
             .GetField("scannedTypes", BindingFlags.Instance | BindingFlags.NonPublic);
         if (field == null)
         {
-            throw new Exception($"Could not extract 'scannedTypes' field from {nameof(EndpointConfiguration)}. Raise an issue here https://github.com/NServiceBusExtensions/NServiceBus.HandlerOrdering/issues/new");
+            throw new($"Could not extract 'scannedTypes' field from {nameof(EndpointConfiguration)}. Raise an issue here https://github.com/NServiceBusExtensions/NServiceBus.HandlerOrdering/issues/new");
         }
-        var types = (List<Type>) field.GetValue(configuration);
+        var types = (List<Type>) field.GetValue(configuration)!;
         return GetHandlerDependencies(types);
     }
 
@@ -53,7 +49,7 @@ class OrderHandlers :
                 }
                 if (!dictionary.TryGetValue(type, out var dependencies))
                 {
-                    dictionary[type] = dependencies = new List<Type>();
+                    dictionary[type] = dependencies = new();
                 }
                 dependencies.Add(face.GenericTypeArguments.First());
             }

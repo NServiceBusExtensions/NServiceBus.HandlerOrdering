@@ -1,25 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
+﻿using System.Collections.ObjectModel;
 
 class TypeSorter
 {
     Dictionary<Type, List<Type>> dependencies;
-    List<Type> sorted = new List<Type>();
+    List<Type> sorted = new();
     List<Type> stack = null!;
     public ReadOnlyCollection<Type> Sorted;
-    HashSet<Type> visited = new HashSet<Type>();
+    HashSet<Type> visited = new();
 
     public TypeSorter(Dictionary<Type, List<Type>> dependencies)
     {
         this.dependencies = dependencies;
         foreach (var item in dependencies.Keys)
         {
-            stack = new List<Type>();
+            stack = new();
             Visit(item);
         }
-        Sorted = new ReadOnlyCollection<Type>(sorted);
+        Sorted = new(sorted);
     }
 
     void Visit(Type item)
@@ -39,7 +36,7 @@ class TypeSorter
                     stringBuilder.AppendLine($"'{type.Name}' wants to run after '{dependentType.Name}'.");
                 }
 
-                throw new Exception(stringBuilder.ToString());
+                throw new(stringBuilder.ToString());
             }
             return;
         }

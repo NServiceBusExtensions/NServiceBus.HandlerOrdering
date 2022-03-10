@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using VerifyXunit;
-using Xunit;
-using Xunit.Abstractions;
-
-public class TypeSorterTests :
+﻿public class TypeSorterTests :
     VerifyBase
 {
     public class SimpleSort
@@ -14,12 +8,12 @@ public class TypeSorterTests :
         {
             var dependencies = new Dictionary<Type, List<Type>>
             {
-                [typeof(Class1)] = new List<Type>
+                [typeof(Class1)] = new()
                 {
                     typeof(Class2),
                     typeof(Class3)
                 },
-                [typeof(Class2)] = new List<Type>
+                [typeof(Class2)] = new()
                 {
                     typeof(Class3)
                 }
@@ -51,15 +45,15 @@ public class TypeSorterTests :
         {
             var dependencies = new Dictionary<Type, List<Type>>
             {
-                [typeof(Class1)] = new List<Type>
+                [typeof(Class1)] = new()
                 {
                     typeof(Class2),
                 },
-                [typeof(Class2)] = new List<Type>
+                [typeof(Class2)] = new()
                 {
                     typeof(Class3)
                 },
-                [typeof(Class3)] = new List<Type>
+                [typeof(Class3)] = new()
                 {
                     typeof(Class1)
                 }
@@ -92,7 +86,7 @@ public class TypeSorterTests :
         {
             var dependencies = new Dictionary<Type, List<Type>>
             {
-                [typeof(Class1)] = new List<Type>
+                [typeof(Class1)] = new()
                 {
                     typeof(Class1),
                 }
@@ -109,7 +103,7 @@ public class TypeSorterTests :
         }
     }
 
-    public TypeSorterTests(ITestOutputHelper output) :
+    public TypeSorterTests(VerifySettings? output) :
         base(output)
     {
     }
