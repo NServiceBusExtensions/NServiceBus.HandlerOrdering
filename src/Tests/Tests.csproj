@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -11,6 +11,6 @@
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="24.5.1" />
     <PackageReference Include="Verify.Xunit" Version="19.10.0" />
     <ProjectReference Include="..\HandlerOrdering\NServiceBus.HandlerOrdering.csproj" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.87" PrivateAssets="all" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.90" PrivateAssets="all" />
   </ItemGroup>
 </Project>
