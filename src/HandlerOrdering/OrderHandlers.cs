@@ -1,7 +1,4 @@
-﻿using HandlerOrdering;
-using NServiceBus;
-
-class OrderHandlers :
+﻿class OrderHandlers :
     INeedInitialization
 {
     public void Customize(EndpointConfiguration configuration)

@@ -1,5 +1,5 @@
-﻿public class TypeSorterTests :
-    VerifyBase
+﻿public class TypeSorterTests(VerifySettings? output) :
+    VerifyBase(output)
 {
     public class SimpleSort
     {
@@ -25,17 +25,11 @@
             Assert.Equal(typeof (Class1), sorted[2]);
         }
 
-        class Class1
-        {
-        }
+        class Class1;
 
-        class Class2
-        {
-        }
+        class Class2;
 
-        class Class3
-        {
-        }
+        class Class3;
     }
 
     public class Ensure_circular_dependencies_are_handled
@@ -59,24 +53,20 @@
                 }
             };
             var exception = Assert.Throws<Exception>(() => new TypeSorter(dependencies));
-            var expected = @"Cyclic dependency detected.
-'Class1' wants to run after 'Class3'.
-'Class3' wants to run after 'Class2'.
-'Class2' wants to run after 'Class1'.
-".Replace("\r\n","").Replace("\n","");
+            var expected =
+                """
+                    Cyclic dependency detected.
+                    'Class1' wants to run after 'Class3'.
+                    'Class3' wants to run after 'Class2'.
+                    'Class2' wants to run after 'Class1'.
+
+                    """.Replace("\r\n","").Replace("\n","");
             Assert.Equal(expected, exception.Message.Replace("\r\n", "").Replace("\n", ""));
         }
 
-        class Class1
-        {
-        }
-
-        class Class2
-        {
-        }
-        class Class3
-        {
-        }
+        class Class1;
+        class Class2;
+        class Class3;
     }
 
     public class Ensure_self_dependencies_are_handled
@@ -92,19 +82,14 @@
                 }
             };
             var exception = Assert.Throws<Exception>(() => new TypeSorter(dependencies));
-            var expected = @"Cyclic dependency detected.
-'Class1' wants to run after 'Class1'.
-".Replace("\r\n","").Replace("\n","");
+            var expected = """
+                           Cyclic dependency detected.
+                           'Class1' wants to run after 'Class1'.
+
+                           """.Replace("\r\n","").Replace("\n","");
             Assert.Equal(expected, exception.Message.Replace("\r\n", "").Replace("\n", ""));
         }
 
-        class Class1
-        {
-        }
-    }
-
-    public TypeSorterTests(VerifySettings? output) :
-        base(output)
-    {
+        class Class1;
     }
 }

@@ -1,5 +1,4 @@
-﻿using HandlerOrdering;
-using NServiceBus;
+﻿using NServiceBus;
 
 class Usage
 {

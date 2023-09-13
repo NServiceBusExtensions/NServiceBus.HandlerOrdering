@@ -1,5 +1,4 @@
-﻿using HandlerOrdering;
-using NServiceBus;
+﻿using NServiceBus;
 
 #region express-order2
 public class MessageHandler2 :

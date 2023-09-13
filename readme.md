@@ -71,7 +71,7 @@ https://nuget.org/packages/NServiceBus.HandlerOrdering/
 ```cs
 configuration.ApplyInterfaceHandlerOrdering();
 ```
-<sup><a href='/src/Tests/Snippets/Usage.cs#L8-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-usage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L7-L11' title='Snippet source file'>snippet source</a> | <a href='#snippet-usage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -96,7 +96,7 @@ public class MessageHandler1 :
     IWantToRunAfter<MessageHandler3>
 {
 ```
-<sup><a href='/src/Tests/Snippets/MessageHandler1.cs#L4-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-express-order1-1' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/MessageHandler1.cs#L3-L8' title='Snippet source file'>snippet source</a> | <a href='#snippet-express-order1-1' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -118,7 +118,7 @@ public class MessageHandler2 :
     IWantToRunAfter<MessageHandler1>
 {
 ```
-<sup><a href='/src/Tests/Snippets/MessageHandler2.cs#L4-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-express-order2-1' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/MessageHandler2.cs#L3-L8' title='Snippet source file'>snippet source</a> | <a href='#snippet-express-order2-1' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -166,7 +166,7 @@ public class MessageHandler1 :
     IWantToRunAfter<MessageHandler3>
 {
 ```
-<sup><a href='/src/Tests/Snippets/MessageHandler1.cs#L4-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-express-order1-1' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/MessageHandler1.cs#L3-L8' title='Snippet source file'>snippet source</a> | <a href='#snippet-express-order1-1' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -188,7 +188,7 @@ public class MessageHandler2 :
     IWantToRunAfter<MessageHandler1>
 {
 ```
-<sup><a href='/src/Tests/Snippets/MessageHandler2.cs#L4-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-express-order2-1' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/MessageHandler2.cs#L3-L8' title='Snippet source file'>snippet source</a> | <a href='#snippet-express-order2-1' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

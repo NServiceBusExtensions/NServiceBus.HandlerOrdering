@@ -1,6 +1,4 @@
-﻿using System.Collections.ObjectModel;
-
-class TypeSorter
+﻿class TypeSorter
 {
     Dictionary<Type, List<Type>> dependencies;
     List<Type> sorted = new();

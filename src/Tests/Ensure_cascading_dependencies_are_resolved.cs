@@ -1,6 +1,4 @@
-﻿using HandlerOrdering;
-
-public class Ensure_cascading_dependencies_are_resolved
+﻿public class Ensure_cascading_dependencies_are_resolved
 {
     [Fact]
     public void Run()
@@ -20,16 +18,10 @@ public class Ensure_cascading_dependencies_are_resolved
 
     class Class1 :
         IWantToRunAfter<Class2>,
-        IWantToRunAfter<Class3>
-    {
-    }
+        IWantToRunAfter<Class3>;
 
     class Class2 :
-        IWantToRunAfter<Class3>
-    {
-    }
+        IWantToRunAfter<Class3>;
 
-    class Class3
-    {
-    }
+    class Class3;
 }

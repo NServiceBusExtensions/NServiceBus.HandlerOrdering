@@ -1,7 +1,4 @@
-﻿using NServiceBus;
-using NServiceBus.Configuration.AdvancedExtensibility;
-
-namespace HandlerOrdering;
+﻿namespace HandlerOrdering;
 
 /// <summary>
 /// Extensions to <see cref="EndpointConfiguration"/> for enabling HandlerOrdering.
