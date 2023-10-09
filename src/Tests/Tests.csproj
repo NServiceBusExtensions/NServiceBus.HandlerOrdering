@@ -9,7 +9,7 @@
     <PackageReference Include="Xunit" Version="2.5.1" />
     <PackageReference Include="XunitContext" Version="3.3.1" />
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="25.1.0" />
-    <PackageReference Include="Verify.Xunit" Version="22.1.1" />
+    <PackageReference Include="Verify.Xunit" Version="22.1.2" />
     <ProjectReference Include="..\HandlerOrdering\NServiceBus.HandlerOrdering.csproj" />
     <PackageReference Include="ProjectDefaults" Version="1.0.100" PrivateAssets="all" />
   </ItemGroup>
