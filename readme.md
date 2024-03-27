@@ -67,11 +67,11 @@ https://nuget.org/packages/NServiceBus.HandlerOrdering/
 ## Usage
 
 <!-- snippet: Usage -->
-<a id='snippet-usage'></a>
+<a id='snippet-Usage'></a>
 ```cs
 configuration.ApplyInterfaceHandlerOrdering();
 ```
-<sup><a href='/src/Tests/Snippets/Usage.cs#L7-L11' title='Snippet source file'>snippet source</a> | <a href='#snippet-usage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L7-L11' title='Snippet source file'>snippet source</a> | <a href='#snippet-Usage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
