@@ -11,6 +11,6 @@
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="27.0.2" />
     <PackageReference Include="Verify.Xunit" Version="25.3.2" />
     <ProjectReference Include="..\HandlerOrdering\NServiceBus.HandlerOrdering.csproj" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.133" PrivateAssets="all" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.134" PrivateAssets="all" />
   </ItemGroup>
 </Project>
