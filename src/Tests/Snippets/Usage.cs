@@ -1,4 +1,4 @@
-﻿using NServiceBus;
+﻿#pragma warning disable IDE0021
 
 class Usage
 {

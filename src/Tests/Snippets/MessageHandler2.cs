@@ -1,6 +1,4 @@
-﻿using NServiceBus;
-
-#region express-order2
+﻿#region express-order2
 public class MessageHandler2 :
     IHandleMessages<MyMessage>,
     IWantToRunAfter<MessageHandler1>

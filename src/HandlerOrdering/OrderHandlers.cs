@@ -9,7 +9,7 @@
         }
     }
 
-    public void ApplyInterfaceHandlerOrdering(EndpointConfiguration configuration)
+    static void ApplyInterfaceHandlerOrdering(EndpointConfiguration configuration)
     {
         var handlerDependencies = GetHandlerDependencies(configuration);
         var sorted = new TypeSorter(handlerDependencies).Sorted;
@@ -24,6 +24,7 @@
         {
             throw new($"Could not extract 'scannedTypes' field from {nameof(EndpointConfiguration)}. Raise an issue here https://github.com/NServiceBusExtensions/NServiceBus.HandlerOrdering/issues/new");
         }
+
         var types = (List<Type>) field.GetValue(configuration)!;
         return GetHandlerDependencies(types);
     }
@@ -40,17 +41,21 @@
                 {
                     continue;
                 }
+
                 if (face.GetGenericTypeDefinition() != typeof(IWantToRunAfter<>))
                 {
                     continue;
                 }
+
                 if (!dictionary.TryGetValue(type, out var dependencies))
                 {
                     dictionary[type] = dependencies = new();
                 }
+
                 dependencies.Add(face.GenericTypeArguments.First());
             }
         }
+
         return dictionary;
     }
 }

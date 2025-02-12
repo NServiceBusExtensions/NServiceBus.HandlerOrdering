@@ -1,6 +1,4 @@
-﻿using NServiceBus;
-
-public class MyMessage :
+﻿public class MyMessage :
     IMessage
 {
     public Guid Id { get; set; }
