@@ -4,12 +4,12 @@
     <TargetFramework>net7.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="xunit.runner.visualstudio" Version="3.0.0" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.0.2" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
     <PackageReference Include="Xunit" Version="2.9.3" />
     <PackageReference Include="XunitContext" Version="3.3.2" />
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="27.0.2" />
-    <PackageReference Include="Verify.Xunit" Version="28.8.1" />
+    <PackageReference Include="Verify.Xunit" Version="28.10.1" />
     <ProjectReference Include="..\HandlerOrdering\NServiceBus.HandlerOrdering.csproj" />
     <PackageReference Include="ProjectDefaults" Version="1.0.147" PrivateAssets="all" />
   </ItemGroup>
