@@ -4,7 +4,7 @@
     <TargetFramework>net9.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NServiceBus" Version="9.2.5" />
+    <PackageReference Include="NServiceBus" Version="9.2.6" />
     <PackageReference Include="ProjectDefaults" Version="1.0.147" PrivateAssets="all" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" Condition="$(Configuration) == 'Release'" />
   </ItemGroup>
